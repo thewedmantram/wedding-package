@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Photography Packages | The Wedmantram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a2a3a;
+            --primary-light: #2c4a63;
+            --accent-rose: #d48a96; 
+            --accent-gold: #d4af37;
+            --bg-light: #faf9f8;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* Navbar Layout */
+        nav {
+            background-color: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-logo {
+            max-height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: var(--accent-rose);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            display: block;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)), url('https://pyrurituals.com/wp-content/uploads/2024/06/7-scaled.webp') center 40% / cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px 150px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--white);
+            font-weight: 400;
+            max-width: 650px;
+            margin: 0 auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: -60px auto 40px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Sub-sections Layout */
+        .info-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--primary-dark);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-rose);
+            margin: 10px auto 0;
+        }
+        
+        .sub-title {
+            color: var(--primary-dark); 
+            margin-top: 35px; 
+            margin-bottom: 15px; 
+            font-size: 22px;
+        }
+
+        /* Terms List Layout */
+        .tc-list { list-style: none; }
+        .tc-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .tc-list li::before {
+            content: "▪";
+            color: var(--primary-light);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Forms / Agreement Layout */
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-row {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+        .form-label {
+            font-weight: 500;
+            color: var(--text-dark);
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+        .form-line {
+            flex-grow: 1;
+            border-bottom: 1px solid var(--text-muted);
+            height: 20px;
+        }
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* Contact Details Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            background-color: var(--bg-light);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-gold);
+            transition: transform 0.3s;
+        }
+        .contact-item:hover { transform: translateY(-5px); }
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .contact-title {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .contact-link {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        .contact-link:hover { color: var(--accent-rose); }
+        
+        /* Interlinking Button Styles */
+        .page-link-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eeeeee;
+        }
+        
+        .page-link-btn {
+            display: inline-block;
+            background-color: var(--accent-rose);
+            color: var(--white);
+            padding: 12px 35px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(212, 138, 150, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .page-link-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(26, 42, 58, 0.2);
+            color: var(--white);
+        }
+
+        /* Footer Layout */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-top: 60px;
+        }
+
+        .footer-content h4 {
+            color: var(--white);
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .hashtags {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #8c9ca8;
+            font-style: italic;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 2;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hashtags span {
+            display: inline-block;
+            margin: 0 8px;
+            color: var(--accent-gold);
+            transition: color 0.3s;
+        }
+        
+        .hashtags span:hover {
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .container { margin-top: -30px; }
+            .hero { padding: 80px 20px 100px; }
+            .section-title { margin-top: 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            .signature-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <img src="logoblack.png" alt="The Wedmantram" class="brand-logo">
+            <span>Every picture tells a love story</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Terms & Conditions.</h1>
+        <p>Premium photography & cinematography tailored for your perfect day.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Payment Terms Section (Updated) -->
+        <div class="info-section">
+            <h2 class="section-title">1. Booking & Payment</h2>
+            <ul class="tc-list">
+                <li>Booking will be confirmed only after receiving the agreed advance amount.</li>
+                <li><strong>50%</strong> Advance at the time of booking.</li>
+                <li><strong>30%</strong> After Event Completion.</li>
+                <li><strong>15%</strong> At the Time of Video Delivery.</li>
+                <li><strong>5%</strong> At the Time of Album Delivery.</li>
+                <li>All payments once made are subject to the cancellation policy mentioned below.</li>
+                <li>Mode of Payment - Cash/Net banking.</li>
+            </ul>
+        </div>
+
+        <!-- Merged Terms and Conditions Section -->
+        <div class="info-section">
+            <h2 class="section-title">Terms & Conditions</h2>
+
+            <h3 class="sub-title">2. Deliverables & Delivery Time</h3>
+            <ul class="tc-list">
+                <li>Photos/videos will be delivered according to the selected package.</li>
+                <li>Estimated delivery time will be communicated at the time of booking.</li>
+                <li>Album design will be shared with the client for approval before printing. Once the album is approved, changes may incur additional charges.</li>
+                <li>We will provide only 2 reels on trending songs and a teaser of our choice to dedicate to the couple.</li>
+                <li>We will not provide any type of RAW (non-edited) videos.</li>
+                <li>We will share raw photos on Google Drive & it will be automatically deleted from the app after 50 days of upload.</li>
+                <li>After completing your work we will hand over the hard disk(Provided by You) to you after copying the data. After one month of delivering the hard disk to you, we will delete your backup data & are not responsible for any data.</li>
+            </ul>
+
+            <h3 class="sub-title">3. Image & Video Selection</h3>
+            <ul class="tc-list">
+                <li>The photographer will make the final selection of photographs/videos for editing based on quality and artistic suitability, unless a specific selection service is included in the package.</li>
+            </ul>
+
+            <h3 class="sub-title">4. Logistics, Overtime & Additional Charges</h3>
+            <ul class="tc-list">
+                <li>It's the responsibility of the client to provide food, travel & stay expenses.</li>
+                <li>We will not accept food in the form of food packages.</li>
+                <li>Any additional hours, locations, services, extra photographs, or other requirements outside the selected package will be charged separately.</li>
+            </ul>
+
+            <h3 class="sub-title">5. Copyright & Usage</h3>
+            <ul class="tc-list">
+                <li>All photographs and videos remain the intellectual property of the photographer.</li>
+                <li>The photographer may use selected photographs/videos for portfolio, website, and social-media promotion unless the client requests otherwise in writing.</li>
+            </ul>
+
+            <h3 class="sub-title">6. Cancellation & Date Changes</h3>
+            <ul class="tc-list">
+                <li>Cancellation by the client after confirmation may result in forfeiture of the advance booking amount.</li>
+                <li>Date changes are subject to the photographer's availability.</li>
+                <li>If the requested new date is unavailable, the booking amount may be treated as non-refundable.</li>
+                <li>The reschedule date will be agreed by both parties after a mutual discussion.</li>
+                <li>If the wedding is cancelled or postponed by the client because of any reason like weather conditions, act of god & fault of 3rd party, we are not responsible in any case & the amount will not be refundable.</li>
+                <li>The photographer will not be responsible for delays or inability to perform services caused by circumstances beyond reasonable control, including natural disasters, accidents, government restrictions, or other unforeseen events.</li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="info-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: var(--primary-dark); margin-bottom: 5px;">Do you travel?</h4>
+                <p style="color: var(--text-muted); font-size: 15px;">Yes, we can, we love to.</p>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: var(--primary-dark); margin-bottom: 5px;">What is the strength of the team that will travel to cover my wedding?</h4>
+                <p style="color: var(--text-muted); font-size: 15px;">While discussing with you about your function details, we shall also go into the nitty gritty's of the crowd, your requirements in terms of the deliverables. For intimate weddings, we limit the size of the team, so that each crew member gets proper control over filming without any obstructions.</p>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: var(--primary-dark); margin-bottom: 5px;">Why do you take an advance amount prior to the event?</h4>
+                <p style="color: var(--text-muted); font-size: 15px;">So we're asked this very often, and we absolutely consider the client's concern regarding this. However, right from the process of documentation, to making up the team for the wedding, deciding on the equipments to the process of the deliverables, everything comes with a cost. We'd love to treat every story, whether it is a lavish destination wedding or an intimate wedding at home, with the grandeur & importance it deserves. Moreover, every aspect, some of which mentioned above, is based on the trust we place on each other.</p>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: var(--primary-dark); margin-bottom: 5px;">What type of camera/equipment do you use?</h4>
+                <p style="color: var(--text-muted); font-size: 15px;">We use latest technology in the market to create your memories in best possible way. Be it high end lighting equipment, super fast lenses, drones, we have it all.</p>
+            </div>
+            
+            <div>
+                <h4 style="color: var(--primary-dark); margin-bottom: 5px;">How many images will you deliver?</h4>
+                <p style="color: var(--text-muted); font-size: 15px;">Don't worry about the pictures, once we are with you there is no limit on the number of pictures we take we deliver everything that matters to you, we do not over promise.</p>
+            </div>
+        </div>
+
+        <!-- NEWLY ADDED: Photography Service Agreement Form -->
+        <div class="info-section">
+            <h2 class="section-title">Photography & Cinematography Service Agreement</h2>
+            
+            <div class="form-section">
+                <h3 class="sub-title" style="margin-top: 0;">Client Details</h3>
+                <div class="form-row"><span class="form-label">Client Name:</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Phone No.:</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Event/Venue:</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Event Date(s):</span><div class="form-line"></div></div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="sub-title">Service Details</h3>
+                <div class="form-row"><span class="form-label">Package Selected:</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Photography:</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Cinematography:</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Album:</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Total Package Amount: ₹</span><div class="form-line"></div></div>
+            </div>
+        </div>
+
+        <!-- NEWLY ADDED: Final Acceptance Section -->
+        <div class="info-section">
+            <h2 class="section-title" style="text-align: left;">9. Final Acceptance</h2>
+            <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 30px;">By signing below, both parties confirm that they have read, understood and agreed to the above Terms & Conditions.</p>
+            
+            <div class="signature-grid">
+                <!-- Client Column -->
+                <div class="form-section">
+                    <div class="form-row"><span class="form-label">Client Signature:</span><div class="form-line"></div></div>
+                    <div class="form-row"><span class="form-label">Name:</span><div class="form-line"></div></div>
+                    <div class="form-row"><span class="form-label">Date:</span><div class="form-line"></div></div>
+                </div>
+                <!-- Photographer Column -->
+                <div class="form-section">
+                    <div class="form-row"><span class="form-label">Photographer Signature:</span><div class="form-line"></div></div>
+                    <div class="form-row"><span class="form-label">Name/Studio:</span><div class="form-line"></div></div>
+                    <div class="form-row"><span class="form-label">Date:</span><div class="form-line"></div></div>
+                </div>
+            </div>
+
+            <div class="form-section" style="margin-top: 20px; max-width: 500px;">
+                <div class="form-row"><span class="form-label">Booking Amount Received: ₹</span><div class="form-line"></div></div>
+                <div class="form-row"><span class="form-label">Balance Amount: ₹</span><div class="form-line"></div></div>
+            </div>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="info-section">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-title">Phone</div>
+                    <a href="tel:+918249061206" class="contact-link">+91 824 906 1206</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-title">Email Us</div>
+                    <a href="mailto:thewedmantram@gmail.com" class="contact-link">thewedmantram@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-title">Instagram</div>
+                    <a href="https://www.instagram.com/thewedmantram?igsh=MXIzbTBtNW81NTk1cQ==" target="_blank" class="contact-link">@thewedmantram</a>
+                </div>
+
+            </div>
+            
+            <!-- Interlinking Button -->
+            <div class="page-link-container">
+                <a href="index.html" class="page-link-btn">View Our Photography Packages</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="logowhite.png" alt="The Wedmantram" style=" max-height: 80px; margin-bottom: 1px;">
+            <p>Every picture tells a love story.</p>
+        </div>
+        
+        <div class="hashtags">
+            <span>#WeddingPhotography</span>
+            <span>#IndianWedding</span>
+            <span>#WeddingInspiration</span>
+            <span>#BrideAndGroom</span>
+            <span>#WeddingMoments</span>
+            <span>#CinematicWedding</span>
+            <span>#WeddingHighlights</span>
+            <span>#WeddingAlbum</span>
+            <span>#PreWeddingShoot</span>
+            <span>#CouplePortraits</span>
+        </div>
+    </footer>
+
+</body>
+</html>
